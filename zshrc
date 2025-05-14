@@ -105,3 +105,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/opt/michael/bin
 source ~/.bash_aliases
+
+if [ -e ~/.local_bash_aliases ]; then
+    source ~/.local_bash_aliases
+fi

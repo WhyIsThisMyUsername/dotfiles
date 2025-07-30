@@ -167,7 +167,9 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
-vim.opt.statusline = vim.opt.statusline + '%P'
+vim.g.copilot_filetypes = { tex = false }
+vim.g.vimtex_view_forward_search_on_start = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -824,7 +826,8 @@ require('lazy').setup({
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
-      luasnip.config.setup {}
+      -- NOTE luasnip config is kept separate
+      -- luasnip.config.setup { }
 
       cmp.setup {
         snippet = {
@@ -974,6 +977,7 @@ require('lazy').setup({
       auto_install = true,
       highlight = {
         enable = true,
+        disable = { 'tex', 'latex' },
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
@@ -1040,3 +1044,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+vim.opt.statusline = vim.opt.statusline + '%P '

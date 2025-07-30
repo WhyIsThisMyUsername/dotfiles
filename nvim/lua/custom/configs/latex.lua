@@ -1,4 +1,4 @@
 return {
-  vim.keymap.set('n', '<C-b><C-b>', '<cmd>w<CR> <cmd>!buildtex *.tex<CR>', { desc = 'Build LaTeX file with references' }),
-  vim.keymap.set('n', '<C-b><C-n>', '<cmd>w<CR> <cmd>!buildtex *.tex --nobiber<CR>', { desc = 'Build LaTeX file without references' }),
+  vim.keymap.set('n', '<leader>br', '<cmd>w<CR> <cmd>!buildtex *.tex<CR>', { desc = '[B]uild LaTeX file with [R]eferences' }),
+  vim.keymap.set('n', '<leader>bw', '<cmd>w<CR> <cmd>!buildtex *.tex --nobiber<CR>', { desc = '[B]uild LaTeX file [W]ithout references' }),
 }

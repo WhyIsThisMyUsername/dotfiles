@@ -4,7 +4,7 @@ return {
       ltex = {
         language = 'en',
         additionalRules = {
-          languageModel = '~/models/ngrams/',
+          -- languageModel = '~/models/ngrams/',
         },
       },
     },

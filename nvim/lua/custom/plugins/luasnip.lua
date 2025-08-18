@@ -21,10 +21,10 @@ return {
       store_selection_keys = '<Tab>',
     }
 
-    local auto_expand = require('luasnip').expand_auto
-    require('luasnip').expand_auto = function(...)
-      vim.o.undolevels = vim.o.undolevels
-      auto_expand(...)
+    local snip_expand = require('luasnip').snip_expand
+    require('luasnip').pre_expand = function(...)
+      vim.o.ul = vim.o.ul
+      snip_expand(...)
     end
 
     vim.g.tex_flavor = 'latex'

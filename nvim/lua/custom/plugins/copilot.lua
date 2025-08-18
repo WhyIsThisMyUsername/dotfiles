@@ -12,8 +12,9 @@ return {
   config = function(_, opts)
     local chat = require 'CopilotChat'
     chat.setup(opts)
-    vim.g.copilot_no_tab_map = true
-    vim.cmd 'let g:copilot_no_tab_map = v:true'
+    -- vim.g.copilot_no_tab_map = true
+    -- vim.cmd 'let g:copilot_no_tab_map = v:true'
+    vim.g.copilot_no_tab_map = 1
     local keymap = vim.keymap
     keymap.set('n', '<leader>cct', '<cmd>CopilotChatToggle<cr>', { desc = '[C]opilot[C]hat[T]oggle' })
     vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
